@@ -1,0 +1,17 @@
+<hr>
+<h2>Event Binding</h2>
+
+<input
+  type="text"
+  placeholder="press enter to submit"
+  (input)="onInput($event)"
+  (keyup.enter)="onEnterClick($event)"
+>
+<button (click)="onButtonClick($event)">Click me!</button>
+
+<p>Let's see if you press the <strong>Enter</strong>:</p>
+<p><strong>{{enterValue}}</strong></p>
+
+<p>Let's see if you press the <strong>Button</strong>:</p>
+<p><strong>{{buttonValue}}</strong></p>
+
