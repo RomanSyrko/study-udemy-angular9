@@ -1,0 +1,17 @@
+<article>
+
+  <h2>ngSwitch</h2>
+
+  <button (click)="toggle = !toggle">Toggle</button>
+  <button (click)="toggle = 111">Default</button>
+
+  <div [ngSwitch]="toggle">
+    <p *ngSwitchCase="true" class="blue">Lorem ipsum dolor sit.</p>
+    <p *ngSwitchCase="false" class="yellow">Lorem ipsum dolor sit amet, consectetur.</p>
+    <p *ngSwitchDefault>Lorem ipsum.</p>
+  </div>
+
+  <!-- *ngSwitchCase="" = як case у Switch -->
+  <!-- *ngSwitchDefault = як default у Switch -->
+
+</article>

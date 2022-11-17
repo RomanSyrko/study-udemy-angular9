@@ -1,0 +1,14 @@
+.blue{
+  background: #6db1fa;
+  font-weight: bold;
+}
+.yellow{
+  background: #f1db6f;
+  font-weight: bold;
+}
+article{
+  width: 300px;
+  border: 1px dotted gray;
+  text-align: center;
+  margin: 2px;
+}

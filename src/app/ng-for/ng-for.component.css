@@ -1,0 +1,23 @@
+article {
+  width: 300px;
+  border: 1px dotted gray;
+  margin: 2px;
+}
+
+.blue {
+  background: #6db1fa;
+  font-weight: bold;
+}
+
+.yellow {
+  background: #f1db6f;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+}
+
+.displayFlex {
+  display: flex;
+}

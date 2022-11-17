@@ -1,0 +1,34 @@
+<article>
+
+  <h2>ngFor</h2>
+
+  <!-- Варіант 1 -->
+  <div class="displayFlex">
+    <div>
+      <ul>
+        <li *ngFor="let number of arr; let i = index">
+          {{i + 1}}: <strong>{{number}}</strong>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ngFor підходить для ітерації масиву та створення багато нових liшок -->
+    <!-- ; - після циклу, щоб добавити ще умову -->
+    <!-- +1 - Якщо ми хочемо, щоб індекс стартував з 1 а не з 0 -->
+
+    <!-- Варіант 2 -->
+    <div>
+      <ul>
+        <li *ngFor="let user of obj">
+          <p><strong>{{user.id}}: </strong>{{user.name}} - <small>{{user.username}}</small></p>
+          <ul>
+            <li *ngFor="let address of user.address">
+              <p><small>{{address.street}}{{address.zipcode}}</small></p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</article>

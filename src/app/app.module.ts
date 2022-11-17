@@ -8,6 +8,11 @@ import {BindingComponent} from './binding/binding.component';
 import {EventBindingComponent} from './event-binding/event-binding.component';
 import {ToWayBindingComponent} from "./to-way-binding/to-way-binding.component";
 import { NgStyleComponent } from './ng-style/ng-style.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgIfElseComponent } from './ng-if-else/ng-if-else.component';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { NgForComponent } from './ng-for/ng-for.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     EventBindingComponent,
     ToWayBindingComponent,
     NgStyleComponent,
+    NgClassComponent,
+    NgIfElseComponent,
+    NgSwitchComponent,
+    NgForComponent,
+    PipesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<article>
+
+<h2>ngClass</h2>
+
+<button (click)="textToggle = !textToggle">Toggle</button>
+
+<!--Варіант 1-->
+<p
+  [ngClass]="{
+blue: textToggle,
+yellow: !textToggle
+}"
+>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, sequi.</p>
+
+<!--Варіант 2-->
+<p
+  [class.blue]="!textToggle"
+  [class.yellow]="textToggle"
+>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, est.</p>
+
+</article>

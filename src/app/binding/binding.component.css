@@ -1,3 +1,9 @@
 img{
   width: 100px;
 }
+article{
+  width: 300px;
+  border: 1px dotted gray;
+  text-align: center;
+  margin: 2px;
+}

@@ -1,0 +1,17 @@
+<article>
+
+<h2>ngIf else</h2>
+
+<button (click)="toggle = !toggle">Toggle</button>
+
+<p *ngIf="toggle; else yellow" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, veniam.</p>
+<ng-template #yellow>
+  <p class="yellow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, iste?</p>
+</ng-template>
+
+
+<!-- Ставимо * якщо ми хочемо змінювати HTML шаблон -->
+<!-- ; else - такий синтаксис -->
+<!-- # - локальні посилання на елементи -->
+
+</article>
