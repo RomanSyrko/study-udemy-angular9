@@ -1,9 +1,14 @@
 <div class="container">
 <h1>{{title}}</h1>
 
-  <app-post-form></app-post-form>
+  <app-post-form
+    (onAdd)="updatePosts($event)"
+  ></app-post-form>
   <hr>
-  <app-post></app-post>
+  <app-post
+    *ngFor="let p of posts"
+    [post]="p"
+  ></app-post>
 
 </div>
 
