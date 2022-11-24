@@ -1,11 +1,12 @@
 import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 
 @Directive({
-  selector: '[appIfNot]'
+  selector: '[appStructuralDirectives]'
 })
-export class IfNotDirective {
+export class StructuralDirectivesDirective {
 
-  @Input('appIfNot') set ifNot(condition: boolean) {
+  // If Not Directive
+  @Input('appStructuralDirectives') set ifNot(condition: boolean) {
     if (!condition) {
       //SHOW ELEMENT
       this.viewContainer.createEmbeddedView(this.templateRef)

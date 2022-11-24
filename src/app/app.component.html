@@ -1,28 +1,10 @@
 <div class="container">
   <h1>{{title}}</h1>
 
+  <app-style-directives></app-style-directives>
+  <app-add-events></app-add-events>
+  <app-passing-parameters-to-the-directive></app-passing-parameters-to-the-directive>
+  <app-host-binding></app-host-binding>
+  <app-structural-directives></app-structural-directives>
 
-  <!--  <p appStyle="blue">Lorem ipsum dolor sit amet.</p>-->
-  <p
-    appStyle="darkgreen" [dStyles]="{border:'1px solid black',borderRadius:'5px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-  </p>
-  <p
-    appStyle="blue" [dStyles]="{border:'1px solid gray',borderRadius:'15px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, totam.
-  </p>
-
-  <div class="card">
-    <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
-    <div class="card" *ngIf="isVisible">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto asperiores eaque eligendi!</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <button class="btn" (click)="isVisible2 = !isVisible2">Toggle2</button>
-    <div class="card" *appIfNot="!isVisible2">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto asperiores eaque eligendi!</p>
-    </div>
-  </div>
 </div>
