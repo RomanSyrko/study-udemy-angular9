@@ -2,10 +2,10 @@
 
   <h2>Filter Lists</h2>
 
-  <button class="btn" (click)="searchField='title'">Title</button>
-  <button class="btn" (click)="searchField='text'">Text</button>
+  <button class="btn" (click)="searchField='title'; placeholder=writeTitle">Title</button>
+  <button class="btn" (click)="searchField='text'; placeholder=writeText">Text</button>
 
-  <input type="text" placeholder="Write..." [(ngModel)]="search">
+  <input type="text" placeholder="{{placeholder}}" [(ngModel)]="search">
 
   <div
     class="card"
