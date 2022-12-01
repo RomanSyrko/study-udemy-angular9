@@ -12,6 +12,7 @@ import {MultByPipe} from './own-pipes/mult-by.pipe';
 import {ExMarksPipe} from './own-pipes/ex-marks.pipe';
 import {FilterListsComponent} from './filter-lists/filter-lists.component';
 import {FilterPipe} from './filter-lists/filter.pipe';
+import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FilterPipe} from './filter-lists/filter.pipe';
     MultByPipe,
     ExMarksPipe,
     FilterListsComponent,
-    FilterPipe
+    FilterPipe,
+    AsyncPipeComponent,
   ],
   imports: [
     BrowserModule,
