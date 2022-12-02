@@ -1,4 +1,14 @@
 <div class="container">
   <h1>{{title}}</h1>
 
+
+  <app-switch
+    [(ngModel)]="appState"
+    (ngModelChange)="handChange()"
+  ></app-switch>
+
+  <hr>
+
+  <p>appState: {{appState}}</p>
+
 </div>
