@@ -50,6 +50,13 @@ img {
   outline: none;
 }
 
+.btn:disabled {
+   background: #ccc;
+   color: #000;
+   cursor: not-allowed;
+ }
+
+
 .btn:hover {
   opacity: 0.8;
 }
@@ -57,7 +64,25 @@ img {
 .form-control {
   display: block;
   margin-top: 0.3rem;
+  margin-bottom: .5rem;
 }
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  user-select: none;
+}
+
+input {
+  margin-bottom: 0;
+}
+
+.validation {
+  color: red;
+}
+
 
 .card {
   padding: 1rem;
@@ -73,7 +98,7 @@ textarea {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
-  margin: 1.2rem 0;
+  margin-bottom: 1rem;
 }
 
 hr {

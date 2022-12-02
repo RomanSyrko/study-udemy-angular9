@@ -1,4 +1,83 @@
 <div class="container">
-  <h1>{{title}}</h1>
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+    <h1>Angular Forms</h1>
 
+    <div class="form-control">
+      <label>Email:</label>
+      <input type="text" placeholder="Email" formControlName="email">
+      <div
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        class="validation"
+      >
+        <small *ngIf="form.get('email')?.errors?.['required']">Can't be empty</small>
+        <small *ngIf="form.get('email')?.errors?.['email']">Fill correct email</small>
+        <small *ngIf="form.get('email')?.errors?.['restrictedEmail']">Email {{form.get('email')?.value}} can't be
+          used</small>
+        <small *ngIf="form.get('email')?.errors?.['uniqEmail']">Email {{form.get('email')?.value}} already
+          exists</small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label>Password:</label>
+      <input type="password" placeholder="Password" formControlName="password">
+
+      <!--  Debugger  -->
+      <!--  <pre>{{form.get('password')?.errors | json}}</pre>  -->
+
+      <div
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        class="validation"
+      >
+        <small *ngIf="form.get('password')?.errors?.['required']">Can't be empty</small>
+        <small *ngIf="form.get('password')?.errors?.['minlength']">
+          Length should be min {{form.get('password')?.errors?.['minlength'].requiredLength}} character.
+          Now we have: {{form.get('password')?.errors?.['minlength'].actualLength}}
+        </small>
+      </div>
+    </div>
+
+    <div class="card" formGroupName="address">
+      <h2>Address:</h2>
+
+      <div class="form-control">
+        <label>Country:</label>
+
+        <select formControlName="country">
+          <option value="ua">Ukraine</option>
+          <option value="pl">Poland</option>
+          <option value="en">Great Britain</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <label>City:</label>
+        <input type="text" placeholder="City..." formControlName="city">
+      </div>
+
+      <button class="btn" type="button" (click)="setCapital()">Choose the capital</button>
+    </div>
+
+
+    <div class="card" formGroupName="skills">
+      <h2>Your skills</h2>
+      <button class="btn" type="button" (click)="AddSkill()">Add new skills</button>
+      <div
+        *ngFor="let control of getControls(); let idx = index"
+        class="form-control"
+      >
+        <label>Skill: {{idx + 1}}</label>
+        <input
+          type="text"
+          [formControlName]="idx">  <!--  [formControlName]="idx" - динамічна валідація  -->
+      </div>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Submit</button>
+    <!-- form.pending для перевірки асинхроних операцій -->
+
+  </form>
 </div>
+
+
+
