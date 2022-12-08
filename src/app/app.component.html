@@ -1,24 +1,39 @@
 <div class="container">
   <h1>{{title}}</h1>
 
-    <div class="card">
-      <div class="form-control">
-        <input type="text" placeholder="Name...">
-      </div>
-      <button class="btn">Add</button>
-      <button class="btn">Download</button>
+  <div class="card">
+    <div class="form-control">
+      <input type="text" placeholder="new todo" [(ngModel)]="todoTitle">
     </div>
+    <button class="btn" (click)="addTodo()">Add</button>
+    <button class="btn" (click)="fetchTodos()">Download</button>
+  </div>
 
-    <hr>
+  <hr>
 
-    <div class="card">
-      <p>
-        <span class="completed">Name</span>
-        <span>
-        <button class="btn btn-danger">Delete</button>
-        <button class="btn">Exit</button>
+  <!-- Вивід помилки якщо вона є -->
+  <p class="error" *ngIf="error; else todosBlock">{{error}}</p>
+  <ng-template #todosBlock>
+    <div *ngIf="!loading; else loadingBlock">
+      <div *ngIf="todos.length; else noTodos">
+        <div class="card" *ngFor="let todo of todos">
+          <p>
+            <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
+            <span>
+        <button class="btn btn-danger" (click)="removeTodo(todo.id)">Delete</button>
+        <button class="btn" [disabled]="todo.completed" (click)="completeTodo(todo.id)">Check</button>
       </span>
-      </p>
+          </p>
+        </div>
+      </div>
+      <ng-template #noTodos>
+        <p>No Todos</p>
+      </ng-template>
     </div>
+
+    <ng-template #loadingBlock>
+      <p>Loading...</p>
+    </ng-template>
+  </ng-template>
 
 </div>
