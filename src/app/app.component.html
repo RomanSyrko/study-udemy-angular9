@@ -63,7 +63,7 @@
       <h2>Your skills</h2>
       <button class="btn" type="button" (click)="AddSkill()">Add new skills</button>
       <div
-        *ngFor="let control of getControls(); let idx = i"
+        *ngFor="let control of getControls(); let idx = index"
         class="form-control"
       >
         <label>Skill: {{idx + 1}}</label>
