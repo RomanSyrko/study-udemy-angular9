@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "strictPropertyInitialization": false, //Не буде помилки і не треба ставити знак оклику
+    "strictPropertyInitialization": false, // Не буде помилки і не треба ставити знак оклику
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

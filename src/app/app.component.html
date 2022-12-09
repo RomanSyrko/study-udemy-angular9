@@ -1,24 +1,37 @@
 <nav class="navbar">
   <h1>
-    <a href="#">Angular Routing</a>
+    <a [routerLink]="['/']">Angular Routing</a>
   </h1>
   <ul>
-    <li class="active">
-      <a href="#">Home</a>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['/']">Home</a>
     </li>
-    <li><a href="#">Posts</a></li>
-    <li><a href="#">About</a></li>
-    <li>
-      <button class="btn">Login</button>
+    <li routerLinkActive="active">
+      <a routerLink="/posts">Posts</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/about']">About</a>
     </li>
     <li>
-      <button class="btn">Logout</button>
+      <button class="btn" (click)="auth.login()">Login</button>
+    </li>
+    <li>
+      <button class="btn" (click)="auth.logout()">Logout</button>
     </li>
   </ul>
 </nav>
 
 <div class="container">
   <div class="card">
-    <app-home></app-home>
+    <!--  router-outlet - динаміка  -->
+    <router-outlet></router-outlet>
   </div>
 </div>
+
+<!--  !ROUTING за посиланнями!  -->
+<!--  href="/..." = буде перезавантажувати сторінку!  -->
+<!--  routerLink="/..." = концепція Single-page application! І робить Preventdefault -->
+<!--  [routerLink]="[/...]" = routerLink - це директива і ми можемо її забайнити - []. - для ДИНАМІКИ  -->
+<!--  І тоді в подвійних лапках ми пишемо javaScript, масив - "['']"  -->
+<!--  routerLinkActive="..." = Для того, щоб міняти динамічно CSS клас, який вказується в лапках  -->
+<!--  [routerLinkActiveOptions]="{exact: true}" = для того, щоб "підсвічувати" сторінку Home лише тоді, коли шлях точно співпадає  -->
