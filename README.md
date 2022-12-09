@@ -1,3 +1,3 @@
 Модальне вікно
 
-![alt text](./pictures/modal-window.png)
+![Модальне вікно](./pictures/modal-window.png)
