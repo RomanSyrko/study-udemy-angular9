@@ -1,4 +1,6 @@
-import {Component} from '@angular/core'
+import {Component, ComponentFactoryResolver, ViewChild} from '@angular/core'
+import {ModalComponent} from "./modal/modal.component";
+import {RefDirective} from "./ref.directive";
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,25 @@ import {Component} from '@angular/core'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor() {
+  /// Варіант №1
+  // modal = false
+
+  /// Варіант №2
+  @ViewChild(RefDirective) refDir: RefDirective
+
+  constructor(private resolver: ComponentFactoryResolver) {
+  }
+
+  showModal() {
+    const modalFactory = this.resolver.resolveComponentFactory(ModalComponent)
+    this.refDir.containerRef.clear()
+
+    const component = this.refDir.containerRef.createComponent(modalFactory)
+
+    component.instance.title = "Dynamic Title"
+    component.instance.close.subscribe(() => {
+      this.refDir.containerRef.clear()
+    })
   }
 }
+
