@@ -1,0 +1,11 @@
+<h3>Special Transition</h3>
+
+<button (click)="animate()">Animate</button>
+<button (click)="boxState = 'special'">Special Transition</button>
+<hr>
+<div
+  class="box"
+  [@box]="boxState"
+>
+  {{boxState | uppercase}}
+</div>

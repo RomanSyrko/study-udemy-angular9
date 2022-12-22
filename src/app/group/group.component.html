@@ -1,0 +1,12 @@
+<h3>Group</h3>
+
+<button (click)="visible = !visible">Group Visible</button>
+<hr>
+<div
+  class="box"
+  *ngIf="visible"
+  [@box]="boxState"
+>
+  {{boxState | uppercase}}
+</div>
+

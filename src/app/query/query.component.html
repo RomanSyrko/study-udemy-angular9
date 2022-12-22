@@ -1,0 +1,11 @@
+<h3>Query</h3>
+
+<button (click)="animate()">Animate</button>
+<button (click)="boxState = 'special'">Query</button>
+<hr>
+<div
+  class="box"
+  [@box]="boxState"
+>
+  <h4>{{boxState | uppercase}}</h4>
+</div>

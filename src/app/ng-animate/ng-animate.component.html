@@ -1,0 +1,10 @@
+<h3>NgAnimate</h3>
+
+<button (click)="visible = !visible">Visible</button>
+<hr>
+
+<div
+  class="rect"
+  *ngIf="visible"
+  [@bounce]="bounce"
+></div>

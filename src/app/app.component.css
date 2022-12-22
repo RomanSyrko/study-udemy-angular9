@@ -2,4 +2,35 @@ p {
   font-size: 1.5rem;
 }
 
+article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main {
+  margin: 20px;
+  padding: 10px;
+  width: 300px;
+  height: 320px;
+  border: 1px dashed black;
+  box-sizing: border-box;
+}
+
+.wrap {
+  margin: 0 auto;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+.box {
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 

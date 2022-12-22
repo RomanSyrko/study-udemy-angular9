@@ -1,0 +1,16 @@
+<h3>Event Animation</h3>
+
+<button (click)="visible = !visible">Visible</button>
+<hr>
+<div
+  class="box"
+  *ngIf="visible"
+  [@box]="boxState"
+  (@box.start)="animationStarted($event)"
+  (@box.done)="animationDone($event)"
+>
+  {{boxState | uppercase}}
+</div>
+
+
+<!-- (@box.start)="" - звертаємося до анімації @box. В круглі дужки бо це подія. І говоримо яку подію ми маємо слухати .start -->

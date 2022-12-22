@@ -1,0 +1,11 @@
+<h3>Keyframes</h3>
+
+<button (click)="visible = !visible">Visible</button>
+<hr>
+<div
+  class="box"
+  *ngIf="visible"
+  [@box]="boxState"
+>
+  {{boxState | uppercase}}
+</div>
