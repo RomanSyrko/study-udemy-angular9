@@ -29,16 +29,12 @@
       class="validation"
     >
       <small *ngIf="form.get('password')?.errors?.['required']">Can't be empty</small>
-<!--      <small *ngIf="form.get('password')?.errors?.['min']">-->
-<!--        The password must be at least {{form.get('password')?.errors?.['minlength'].requiredLength}} characters long.-->
-<!--        Now we have: {{form.get('password')?.errors?.['minlength'].actualLength}} character-->
-<!--      </small>-->
+
       <small *ngIf="form.get('password')?.errors?.['minlength']">
-        The password must be at least <u>{{form.get('password')?.errors?.['minlength'].requiredLength}}</u> characters long.
+        Password must be min <u>{{form.get('password')?.errors?.['minlength'].requiredLength}}</u> characters long.
         Now we have: <u>{{form.get('password')?.errors?.['minlength'].actualLength}}</u>
         character<span *ngIf="form.get('password')?.errors?.['max']">s</span>
       </small>
-      <!-- *ngIf="form.get('password')?.errors?.['minlength']" -->
     </div>
   </div>
 

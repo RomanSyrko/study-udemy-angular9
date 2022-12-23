@@ -221,15 +221,13 @@ img {
   color: var(--primary-color);
 }
 
-.form-control > input {
+.form-control.invalid > input {
   border-color: var(--primary-color);
 }
-
 
 .validation {
   color: var(--primary-color);
 }
-
 
 input[type='text'],
 input[type='email'],
