@@ -1,0 +1,17 @@
+.post {
+
+}
+
+.post > .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post > h1 {
+  margin-bottom: .5rem;
+}
+
+.post > .info > strong {
+  margin-right: 1rem;
+}
