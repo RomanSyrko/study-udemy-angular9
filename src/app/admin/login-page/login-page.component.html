@@ -1,6 +1,8 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
   <h2>Admin panel</h2>
 
+  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">{{error}}</div>
+
   <!--  EMAIL  -->
   <div
     class="form-control"
@@ -41,7 +43,7 @@
   <button
     type="submit"
     class="btn bg-primary"
-    [disabled]="form.invalid"
+    [disabled]="form.invalid || submitted"
   >Login
   </button>
 </form>

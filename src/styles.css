@@ -298,3 +298,7 @@ table th {
 /*.navbar > ul > li > a:hover {*/
 /*  color: var(--light-color);*/
 /*}*/
+
+.open{
+  margin-right: 10px;
+}

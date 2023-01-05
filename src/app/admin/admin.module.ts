@@ -7,8 +7,8 @@ import {DashboardPageComponent} from './dashboard-page/dashboard-page.component'
 import {CreatePageComponent} from './create-page/create-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AuthService} from "./shared/services/auth.service";
 import {SharedModule} from "../shared/shared.module";
+import {SearchPipe} from "./shared/search.pipe";
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import {SharedModule} from "../shared/shared.module";
     LoginPageComponent,
     DashboardPageComponent,
     CreatePageComponent,
-    EditPageComponent
+    EditPageComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
@@ -37,7 +38,7 @@ import {SharedModule} from "../shared/shared.module";
     ])
   ],
   exports: [RouterModule],
-  providers: [AuthService]
+  providers: []
 })
 export class AdminModule {
 }
